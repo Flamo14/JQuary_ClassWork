@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force of Ambition | Career Motivation &amp; Personal Growth</title>
+
+    <!-- Star Wars Inspired Fonts (FontSpace Collection: Star Jedi, SF Distant Galaxy, Star Wars) -->
+    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-distant-galaxy" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/mandalore" rel="stylesheet">
+    <!-- Fallback / Body Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery 3.7.1 CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!-- Animated Starfield Background -->
+    <div id="starfield"></div>
+
+    <!-- Top Navigation & Font Switcher Bar -->
+    <header class="top-bar">
+        <div class="brand-badge">
+            <span class="saber-dot"></span>
+            <span>JQUERY CLASSWORK // 5 INTERACTIVE ELEMENTS</span>
+        </div>
+        <div class="font-controls">
+            <label for="font-selector">Star Wars Font:</label>
+            <select id="font-selector" title="Fonts from FontSpace Star Wars Collection">
+                <option value="'Star Wars', 'Orbitron', sans-serif">Star Jedi / Star Wars</option>
+                <option value="'SF Distant Galaxy', 'Orbitron', sans-serif">SF Distant Galaxy</option>
+                <option value="'Mandalore', 'Orbitron', sans-serif">Mandalore</option>
+            </select>
+            <a href="https://www.fontspace.com/collection/star-wars-fonts-c1r7mjo" target="_blank" rel="noopener" class="fontspace-link">
+                FontSpace Collection &#8599;
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <p class="intro-blue">In a career not so far away, your growth begins today....</p>
+            <h1 class="sw-title">FORCE OF AMBITION</h1>
+            <p class="hero-subtitle">Master Your Mindset, Discipline &amp; Career Trajectory</p>
+        </section>
+
+        <!-- ===================================================================
+             JQUERY ELEMENT #1: Opening Crawl Toggle & Perspective Panel
+             Uses: .slideToggle(), .toggleClass(), .text()
+             =================================================================== -->
+        <section class="card" id="element-1">
+            <div class="card-header">
+                <span class="element-tag">jQuery Element #1 &bull; <code>.slideToggle()</code></span>
+                <h2 class="sw-heading">Episode I: The Awakening of Potential</h2>
+            </div>
+
+            <div class="crawl-controls">
+                <button id="toggle-crawl-btn" class="sw-btn">Hide Opening Crawl</button>
+                <button id="replay-crawl-btn" class="sw-btn sw-btn-outline">Replay Crawl Animation</button>
+            </div>
+
+            <div id="crawl-viewport" class="crawl-viewport">
+                <div id="crawl-content" class="crawl-content">
+                    <p class="crawl-episode">EPISODE I</p>
+                    <h3 class="crawl-MainTitle">THE PATH OF PERSONAL GROWTH</h3>
+                    <p>
+                        Fear of failure and stagnation have gripped the galaxy of modern professionals.
+                        Doubt clouds the horizon as countless aspiring builders hesitate to take the leap
+                        toward their true potential.
+                    </p>
+                    <p>
+                        Yet a small rebellion of lifelong learners has discovered an ancient secret:
+                        consistency beats talent when talent refuses to train. Every skill mastered,
+                        every setback analyzed, and every morning of focused effort strengthens your
+                        connection to the Force of Career Mastery.
+                    </p>
+                    <p>
+                        Unignite your excuses, sharpen your craft, and claim your seat on the High Council
+                        of your industry....
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             JQUERY ELEMENT #2: Holocron Motivational Quote Generator
+             Uses: .fadeOut(), .fadeIn(), .text(), .css()
+             =================================================================== -->
+        <section class="card" id="element-2">
+            <div class="card-header">
+                <span class="element-tag">jQuery Element #2 &bull; <code>.fadeOut() / .fadeIn()</code></span>
+                <h2 class="sw-heading">Jedi Holocron of Career Wisdom</h2>
+            </div>
+
+            <div class="holocron-box" id="holocron-box">
+                <blockquote id="quote-text" class="quote-text">
+                    "Do. Or do not. There is no try — Commit 100% to your daily learning habits."
+                </blockquote>
+                <p id="quote-author" class="quote-author">&mdash; Grand Master Yoda (Mindset Principle #1)</p>
+                <span id="quote-category" class="quote-badge">Execution &amp; Focus</span>
+            </div>
+
+            <div class="action-row">
+                <button id="next-quote-btn" class="sw-btn">Unlock Next Holocron Wisdom</button>
+                <span id="quote-counter" class="counter-label">Holocron 1 of 6</span>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             JQUERY ELEMENT #3: Jedi Career Rank Accordion Roadmap
+             Uses: .slideDown(), .slideUp(), .not(), .toggleClass()
+             =================================================================== -->
+        <section class="card" id="element-3">
+            <div class="card-header">
+                <span class="element-tag">jQuery Element #3 &bull; <code>.slideDown() / .slideUp()</code></span>
+                <h2 class="sw-heading">The 4 Ranks of Career Mastery</h2>
+            </div>
+            <p class="section-desc">Click any rank below to expand the personal growth habits required for that stage.</p>
+
+            <div class="accordion">
+                <div class="accordion-item active">
+                    <button class="accordion-header">
+                        <span class="rank-title">01. Padawan Learner &mdash; Building Foundations</span>
+                        <span class="accordion-icon">&minus;</span>
+                    </button>
+                    <div class="accordion-body" style="display: block;">
+                        <ul>
+                            <li><strong>Embrace Beginner's Mind:</strong> Ask questions without ego and seek feedback early.</li>
+                            <li><strong>Daily Craft Practice:</strong> Dedicate 60 minutes of uninterrupted deep work every day.</li>
+                            <li><strong>Turn Bugs into Mentors:</strong> Document every mistake so you never repeat it twice.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="rank-title">02. Jedi Knight &mdash; Autonomous Execution</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Own the Mission End-to-End:</strong> Deliver solutions, not excuses, when obstacles appear.</li>
+                            <li><strong>Compound Core Skills:</strong> Combine technical excellence with clear communication.</li>
+                            <li><strong>Protect Your Focus:</strong> Eliminate distractions during high-leverage creative hours.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="rank-title">03. Jedi Master &mdash; Mentorship &amp; Strategy</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Elevate Others:</strong> Your true impact is measured by how many Padawans you empower.</li>
+                            <li><strong>Long-Horizon Vision:</strong> Make career and architectural decisions for the next 5 years.</li>
+                            <li><strong>Calm Under Fire:</strong> Bring clarity and composure when projects face high pressure.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="rank-title">04. High Council Leader &mdash; Legacy &amp; Purpose</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Shape the Culture:</strong> Build environments where curiosity and psychological safety thrive.</li>
+                            <li><strong>Align Work with Values:</strong> Choose missions that leave the galaxy better than youfound it.</li>
+                            <li><strong>Never Stop Evolving:</strong> Stay humble enough to keep learning new paradigms.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             JQUERY ELEMENT #4: Lightsaber Skill & Habit Progress Animator
+             Uses: .animate(), .attr(), .data(), DOM traversal
+             =================================================================== -->
+        <section class="card" id="element-4">
+            <div class="card-header">
+                <span class="element-tag">jQuery Element #4 &bull; <code>.animate()</code></span>
+                <h2 class="sw-heading">Lightsaber Skill Power-Up Matrix</h2>
+            </div>
+            <p class="section-desc">Train your core career attributes! Each session animates your lightsaber power bar (+20%).</p>
+
+            <div class="saber-skills">
+                <!-- Skill 1 -->
+                <div class="skill-row" data-progress="40">
+                    <div class="skill-info">
+                        <span class="skill-name">Deep Work &amp; Focus Discipline</span>
+                        <span class="skill-percent">40%</span>
+                    </div>
+                    <div class="saber-track">
+                        <div class="saber-hilt"></div>
+                        <div class="saber-blade blade-blue" style="width: 40%;"></div>
+                    </div>
+                    <button class="train-btn sw-btn-sm">+ Train Skill</button>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-row" data-progress="60">
+                    <div class="skill-info">
+                        <span class="skill-name">Continuous Technical Learning</span>
+                        <span class="skill-percent">60%</span>
+                    </div>
+                    <div class="saber-track">
+                        <div class="saber-hilt"></div>
+                        <div class="saber-blade blade-green" style="width: 60%;"></div>
+                    </div>
+                    <button class="train-btn sw-btn-sm">+ Train Skill</button>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-row" data-progress="20">
+                    <div class="skill-info">
+                        <span class="skill-name">Public Speaking &amp; Leadership</span>
+                        <span class="skill-percent">20%</span>
+                    </div>
+                    <div class="saber-track">
+                        <div class="saber-hilt"></div>
+                        <div class="saber-blade blade-purple" style="width: 20%;"></div>
+                    </div>
+                    <button class="train-btn sw-btn-sm">+ Train Skill</button>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skill-row" data-progress="80">
+                    <div class="skill-info">
+                        <span class="skill-name">Resilience Against Imposter Syndrome</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="saber-track">
+                        <div class="saber-hilt"></div>
+                        <div class="saber-blade blade-gold" style="width: 80%;"></div>
+                    </div>
+                    <button class="train-btn sw-btn-sm">+ Train Skill</button>
+                </div>
+            </div>
+
+            <div class="action-row">
+                <button id="boost-all-btn" class="sw-btn">Ignite Full Mastery (100%)</button>
+                <button id="reset-skills-btn" class="sw-btn sw-btn-outline">Reset Training</button>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             JQUERY ELEMENT #5: Interactive Career Mission Log (DOM Manipulation)
+             Uses: .append(), .on(), .toggleClass(), .fadeOut(), .remove()
+             =================================================================== -->
+        <section class="card" id="element-5">
+            <div class="card-header">
+                <span class="element-tag">jQuery Element #5 &bull; <code>.append() / .on() / .fadeOut()</code></span>
+                <h2 class="sw-heading">Galactic Career Mission Log</h2>
+            </div>
+            <p class="section-desc">Add personal growth goals to your mission log, click a mission to mark it complete, or purge finished objectives.</p>
+
+            <form id="mission-form" class="mission-form">
+                <input
+                    type="text"
+                    id="mission-input"
+                    placeholder="Enter a new career growth goal (e.g., Ship portfolio project this week)..."
+                    required
+                >
+                <button type="submit" class="sw-btn">Launch Mission</button>
+            </form>
+
+            <ul id="mission-list" class="mission-list">
+                <li class="mission-item">
+                    <span class="mission-check">&#9734;</span>
+                    <span class="mission-text">Complete 1 hour of distraction-free coding before checking messages</span>
+                    <button class="delete-mission-btn" title="Remove Mission">&times;</button>
+                </li>
+                <li class="mission-item completed">
+                    <span class="mission-check">&#9733;</span>
+                    <span class="mission-text">Read 10 pages of a career or engineering mastery book</span>
+                    <button class="delete-mission-btn" title="Remove Mission">&times;</button>
+                </li>
+                <li class="mission-item">
+                    <span class="mission-check">&#9734;</span>
+                    <span class="mission-text">Reach out to a mentor or peer for constructive feedback</span>
+                    <button class="delete-mission-btn" title="Remove Mission">&times;</button>
+                </li>
+            </ul>
+
+            <div class="mission-footer">
+                <span id="mission-stats">2 active missions remaining</span>
+                <button id="clear-completed-btn" class="sw-btn-sm sw-btn-outline">Clear Completed</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>May the Force of Continuous Growth Be With Your Career &bull; Built with jQuery 3.7 &amp; Star Wars Typography</p>
+    </footer>
+
+    <!-- Custom jQuery Script -->
+    <script src="script.js"></script>
+</body>
+</html>

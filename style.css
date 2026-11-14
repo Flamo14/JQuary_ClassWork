@@ -1,0 +1,616 @@
+/* ==========================================================================
+   Star Wars Inspired Typography & Theme Variables
+   Collection Reference: https://www.fontspace.com/collection/star-wars-fonts-c1r7mjo
+   ========================================================================== */
+:root {
+    --sw-yellow: #FFE81F;
+    --sw-yellow-glow: rgba(255, 232, 31, 0.35);
+    --sw-blue-intro: #4BD5EE;
+    --saber-blue: #00E5FF;
+    --saber-green: #00FF66;
+    --saber-purple: #C74BFF;
+    --saber-gold: #FFE81F;
+    --bg-space: #05070B;
+    --bg-card: rgba(14, 19, 30, 0.85);
+    --border-subtle: rgba(255, 232, 31, 0.25);
+    --text-main: #E6EDF3;
+    --text-muted: #9BA7B4;
+
+    /* Default Star Wars display font from FontSpace collection */
+    --sw-font: 'Star Wars', 'SF Distant Galaxy', 'Orbitron', sans-serif;
+    --body-font: 'News Cycle', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-space);
+    color: var(--text-main);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Starfield Canvas / Layer */
+#starfield {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 140px, #ffe81f, transparent),
+        radial-gradient(1.5px 1.5px at 160px 80px, #4bd5ee, transparent),
+        radial-gradient(1px 1px at 250px 220px, #fff, transparent),
+        radial-gradient(2px 2px at 320px 50px, #fff, transparent),
+        radial-gradient(ellipse at top, #0d1527 0%, #05070b 75%);
+    background-size: 350px 350px, 350px 350px, 350px 350px, 350px 350px, 350px 350px, 100% 100%;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.9rem 2rem;
+    background: rgba(5, 7, 11, 0.9);
+    border-bottom: 1px solid var(--border-subtle);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--sw-yellow);
+    font-weight: 700;
+}
+
+.saber-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--saber-blue);
+    box-shadow: 0 0 10px var(--saber-blue);
+}
+
+.font-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.font-controls select {
+    background: #111827;
+    color: var(--sw-yellow);
+    border: 1px solid var(--sw-yellow);
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.fontspace-link {
+    color: var(--sw-blue-intro);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px dashed var(--sw-blue-intro);
+    transition: opacity 0.2s;
+}
+
+.fontspace-link:hover {
+    opacity: 0.8;
+}
+
+/* Layout Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+.intro-blue {
+    color: var(--sw-blue-intro);
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.sw-title {
+    font-family: var(--sw-font);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    color: transparent;
+    -webkit-text-stroke: 2px var(--sw-yellow);
+    text-shadow: 0 0 25px var(--sw-yellow-glow);
+    letter-spacing: 4px;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    text-transform: lowercase; /* Star Jedi renders iconic caps on lowercase glyphs too */
+}
+
+.sw-heading {
+    font-family: var(--sw-font);
+    font-size: clamp(1.25rem, 3vw, 1.65rem);
+    color: var(--sw-yellow);
+    letter-spacing: 2.5px;
+    text-shadow: 0 0 12px var(--sw-yellow-glow);
+    margin-top: 0.35rem;
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Card Component */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.75rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(255, 232, 31, 0.55);
+}
+
+.card-header {
+    margin-bottom: 1.1rem;
+}
+
+.element-tag {
+    display: inline-block;
+    background: rgba(75, 213, 238, 0.12);
+    color: var(--sw-blue-intro);
+    border: 1px solid rgba(75, 213, 238, 0.4);
+    padding: 0.15rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.element-tag code {
+    color: var(--sw-yellow);
+    font-weight: 700;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+/* Buttons */
+.sw-btn {
+    background: var(--sw-yellow);
+    color: #05070B;
+    font-family: var(--sw-font);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid var(--sw-yellow);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sw-btn:hover {
+    background: transparent;
+    color: var(--sw-yellow);
+    box-shadow: 0 0 15px var(--sw-yellow-glow);
+}
+
+.sw-btn-outline {
+    background: transparent;
+    color: var(--sw-yellow);
+}
+
+.sw-btn-outline:hover {
+    background: var(--sw-yellow);
+    color: #05070B;
+}
+
+.sw-btn-sm {
+    background: rgba(255, 232, 31, 0.12);
+    color: var(--sw-yellow);
+    border: 1px solid var(--sw-yellow);
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.sw-btn-sm:hover {
+    background: var(--sw-yellow);
+    color: #05070B;
+    box-shadow: 0 0 12px var(--sw-yellow-glow);
+}
+
+/* ==========================================================================
+   ELEMENT #1: Opening Crawl Viewport
+   ========================================================================== */
+.crawl-controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.crawl-viewport {
+    background: radial-gradient(circle at center, #0c1220 0%, #020306 100%);
+    border: 1px solid rgba(255, 232, 31, 0.3);
+    border-radius: 8px;
+    height: 250px;
+    overflow: hidden;
+    perspective: 320px;
+    position: relative;
+    padding: 0 1.5rem;
+}
+
+.crawl-content {
+    color: var(--sw-yellow);
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+    transform-origin: 50% 100%;
+    transform: rotateX(22deg);
+    animation: starWarsCrawl 28s linear infinite;
+}
+
+.crawl-episode,
+.crawl-MainTitle {
+    text-align: center;
+    font-family: var(--sw-font);
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.crawl-content p {
+    margin-bottom: 1rem;
+}
+
+@keyframes starWarsCrawl {
+    0% {
+        transform: rotateX(22deg) translateY(190px);
+    }
+    100% {
+        transform: rotateX(22deg) translateY(-420px);
+    }
+}
+
+/* ==========================================================================
+   ELEMENT #2: Holocron Motivational Quote Generator
+   ========================================================================== */
+.holocron-box {
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(255, 232, 31, 0.05));
+    border-left: 4px solid var(--saber-blue);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    min-height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 229, 255, 0.08);
+}
+
+.quote-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.65rem;
+}
+
+.quote-author {
+    color: var(--sw-yellow);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.quote-badge {
+    align-self: flex-start;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.15rem 0.6rem;
+    border-radius: 99px;
+    background: rgba(0, 229, 255, 0.18);
+    color: var(--saber-blue);
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.counter-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   ELEMENT #3: Jedi Career Rank Accordion
+   ========================================================================== */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.accordion-item {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(9, 13, 22, 0.9);
+}
+
+.accordion-item.active {
+    border-color: var(--sw-yellow);
+    box-shadow: 0 0 14px rgba(255, 232, 31, 0.15);
+}
+
+.accordion-header {
+    width: 100%;
+    background: transparent;
+    color: var(--text-main);
+    border: none;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 232, 31, 0.07);
+}
+
+.accordion-item.active .rank-title {
+    color: var(--sw-yellow);
+}
+
+.accordion-icon {
+    font-size: 1.35rem;
+    color: var(--sw-yellow);
+    font-weight: 700;
+}
+
+.accordion-body {
+    display: none;
+    padding: 0 1.5rem 1.2rem 2.2rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.accordion-body ul {
+    padding-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.accordion-body strong {
+    color: #fff;
+}
+
+/* ==========================================================================
+   ELEMENT #4: Lightsaber Skill & Habit Progress Animator
+   ========================================================================== */
+.saber-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 1rem;
+    align-items: center;
+}
+
+.skill-info {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.skill-percent {
+    color: var(--sw-yellow);
+    font-family: var(--sw-font);
+    letter-spacing: 1px;
+}
+
+.saber-track {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 99px;
+    height: 18px;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.saber-hilt {
+    width: 34px;
+    height: 12px;
+    background: linear-gradient(90deg, #555, #bbb, #333);
+    border-right: 3px solid #d4af37;
+    border-radius: 3px 0 0 3px;
+    flex-shrink: 0;
+}
+
+.saber-blade {
+    height: 10px;
+    border-radius: 0 99px 99px 0;
+    background: #fff;
+}
+
+.blade-blue {
+    box-shadow: 0 0 10px var(--saber-blue), 0 0 20px var(--saber-blue);
+    border: 2px solid var(--saber-blue);
+}
+
+.blade-green {
+    box-shadow: 0 0 10px var(--saber-green), 0 0 20px var(--saber-green);
+    border: 2px solid var(--saber-green);
+}
+
+.blade-purple {
+    box-shadow: 0 0 10px var(--saber-purple), 0 0 20px var(--saber-purple);
+    border: 2px solid var(--saber-purple);
+}
+
+.blade-gold {
+    box-shadow: 0 0 10px var(--saber-gold), 0 0 20px var(--saber-gold);
+    border: 2px solid var(--saber-gold);
+}
+
+/* ==========================================================================
+   ELEMENT #5: Interactive Career Mission Log
+   ========================================================================== */
+.mission-form {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.mission-form input {
+    flex: 1;
+    min-width: 240px;
+    background: rgba(5, 7, 11, 0.9);
+    border: 1px solid rgba(255, 232, 31, 0.4);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+.mission-form input:focus {
+    outline: none;
+    border-color: var(--sw-yellow);
+    box-shadow: 0 0 12px var(--sw-yellow-glow);
+}
+
+.mission-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.mission-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.8rem 1rem;
+    background: rgba(9, 13, 22, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mission-item:hover {
+    border-color: var(--saber-blue);
+}
+
+.mission-item.completed {
+    border-color: rgba(0, 255, 102, 0.4);
+    background: rgba(0, 255, 102, 0.05);
+}
+
+.mission-item.completed .mission-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.mission-check {
+    color: var(--sw-yellow);
+    font-size: 1.25rem;
+}
+
+.mission-text {
+    flex: 1;
+    font-size: 1.05rem;
+}
+
+.delete-mission-btn {
+    background: transparent;
+    border: none;
+    color: #ff5555;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0 0.4rem;
+    line-height: 1;
+}
+
+.delete-mission-btn:hover {
+    color: #ff0000;
+    transform: scale(1.15);
+}
+
+.mission-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
